@@ -219,14 +219,13 @@
     <Content Include="Content\fancybox_overlay.png" />
     <Content Include="Content\fancybox_sprite%402x.png" />
     <Content Include="Content\fancybox_sprite.png" />
-    <Content Include="Content\img\lluvioso.png" />
-    <Content Include="Content\img\nublado.png" />
-    <Content Include="Content\img\soleado.png" />
     <Content Include="Content\jquery.fancybox-buttons.css" />
     <Content Include="Content\jquery.fancybox-thumbs.css" />
     <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\owfont-regular.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\owfont-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
@@ -240,6 +239,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\owfont-regular.eot" />
+    <Content Include="fonts\owfont-regular.otf" />
+    <Content Include="fonts\owfont-regular.ttf" />
+    <Content Include="fonts\owfont-regular.woff" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -299,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -60,3 +60,76 @@ textarea {
 .img-responsive.img-center{
     margin:auto;
 }
+
+/* WEATHER CSS*/
+#weather {
+  width: 530px;
+  margin: 10px auto;
+  padding-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+
+  border-radius: 50px;
+  background: #4CA1AF; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4CA1AF , #C4E0E5); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4CA1AF , #C4E0E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
+
+i {
+  color: #fff;
+  font-family: weather;
+  font-size: 150px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+  text-transform: none;
+}
+
+#weather h2 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+#weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+#weather li {
+  background: #fff;
+  background: rgba(255,255,255,0.90);
+  padding: 20px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#weather .currently {
+  margin: 0 20px;
+}
+
+#WIcon {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#ciudades{
+    background:none;
+    border:none;
+    outline:0px;
+}
+
+#ciudades::selection{
+    background:none;
+    border:none;
+}
+
+#ciudades:focus{
+    background:none;
+    border:none;
+}

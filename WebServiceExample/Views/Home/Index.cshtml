@@ -3,8 +3,8 @@
 }
 
 @*
-    Clima en Cartagena http://api.openweathermap.org/data/2.5/weather?id=3687238&appid=cc6bfa527998abd39564fb6dc3059449
-    
+    Clima en Cartagena http://api.openweathermap.org/data/2.5/weather?id=3687238&appid=cc6bfa527998abd39564fb6dc3059449&lang=es
+
     {"coord":{"lon":-75.51,"lat":10.4},
     "weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],
     "base":"stations",
@@ -16,7 +16,8 @@
     "sys":{"message":0.1669,"country":"CO","sunrise":1478343256,"sunset":1478385415},
     "id":3687238,
     "name":"Cartagena",
-    "cod":200}
+    "c
+    od":200}
 *@
 @*<div class="jumbotron">
     <h1>ASP.NET</h1>
@@ -94,6 +95,25 @@
         </div>
 </div>*@
 
+@*WEATHER BOX*@
+<div id="weather">
+    <h2>
+        <i id="WIcon"></i><span id="Wtemp"></span>
+    </h2>
+    <ul>
+        <li>
+            <select id="ciudades">
+                <option value="3689147">BARRANQUILLA, CO</option>
+                <option value="5095808">BOGOTÁ, CO</option>
+                <option value="3687238">CARTAGENA, CO</option>
+                <option value="3674962">MEDELLIN, CO</option>
+            </select>                     
+        </li>
+        <li id="WDescription" class="currently">-</li>
+        <li id="WWindSpeed">-</li>
+    </ul>
+</div>
+
 @*Search Bar*@
 <div class="row margin">
     <form id="searchForm">
@@ -116,3 +136,4 @@
     </ul>
     <div class="buttons"></div>
 </div>
+

@@ -1,48 +1,61 @@
 ﻿$(document).ready(function () {
-    var lluvioso    = "~/Content/img/lluvioso.png";
-    var nublado     = "~/Content/img/nublado.png";
-    var soleado     = "~/Content/img/soleado.png";
+
+    $("#ciudades").val(3687238);
+    var api = "cc6bfa527998abd39564fb6dc3059449";
+    var ciudad = $("#ciudades").val();
+    var uri = "http://api.openweathermap.org/data/2.5/weather?id=" + ciudad + "&appid=" + api + "&lang=es";
+
+    $.get(uri, function (data, status) {
+            var t = (data.main.temp - 273.15).toFixed(1);
+            var tma = (data.main.temp_min - 273.15).toFixed(2);
+            var tmi = (data.main.temp_max - 273.15).toFixed(2);
+            var iconClass = "owf owf-" + data.weather[0].id;
+
+            $("#Wtemp").text(" "+t +"ºC");
+            $("#WIcon").addClass(iconClass);
+            $("#WCity").text(data.name + ", " + data.sys.country);
+            $("#WDescription").text(data.weather[0].description);
+            $("#WWindSpeed").text(data.wind.speed + "km/s");
+            console.log(data);
+            //var iconuri = "http://openweathermap.org/img/w/";
+            //$("#ciudad").text(data.name + ", " + data.sys.country);
+            //$("#clima").text(data.weather[0].description);
+            //$("#temp").text(t + "ºC");
+            //$("#tempMa").text(tma + "ºC");
+            //$("#tempMi").text(tmi + "ºC");
+            //$("#viento").text(data.wind.speed + "km/s");
+            //$("#icon").attr("src", iconuri + data.weather[0].icon + ".png");
+    });
 
     $("#ciudades").change(function () {
-        //console.log($(this).val());
-        var api = "cc6bfa527998abd39564fb6dc3059449";
         var ciudad = $("#ciudades").val();
-        var uri = "http://api.openweathermap.org/data/2.5/weather?id=" + ciudad + "&appid=" + api;
+        var uri = "http://api.openweathermap.org/data/2.5/weather?id=" + ciudad + "&appid=" + api + "&lang=es";
 
         $.getJSON(uri, function (data, status) {
-            var t       = (data.main.temp - 273.15).toFixed(2);
+            var t       = (data.main.temp - 273.15).toFixed(1);
             var tma     = (data.main.temp_min - 273.15).toFixed(2);
-            var tmi     = (data.main.temp_max - 273.15).toFixed(2);
-            var iconuri = "http://openweathermap.org/img/w/";
-            $("#ciudad").text(data.name + ", " + data.sys.country);
-            $("#clima").text(data.weather[0].description);
-            $("#temp").text(t + "ºC");
-            $("#tempMa").text(tma + "ºC");
-            $("#tempMi").text(tmi+"ºC");
-            $("#viento").text(data.wind.speed + "km/s");
-            $("#icon").attr("src", iconuri + data.weather[0].icon + ".png");
+            var tmi = (data.main.temp_max - 273.15).toFixed(2);
+            var iconClass = "owf owf-" + data.weather[0].id;
+
+            $("#Wtemp").text(" " + t + "ºC");
+            $("#WIcon").addClass(iconClass);
+            $("#WCity").text(data.name + ", " + data.sys.country);
+            $("#WDescription").text(data.weather[0].description);
+            $("#WWindSpeed").text(data.wind.speed + "km/s");
+            console.log(data);
+            //var iconuri = "http://openweathermap.org/img/w/";
+            //$("#ciudad").text(data.name + ", " + data.sys.country);
+            //$("#clima").text(data.weather[0].description);
+            //$("#temp").text(t + "ºC");
+            //$("#tempMa").text(tma + "ºC");
+            //$("#tempMi").text(tmi+"ºC");
+            //$("#viento").text(data.wind.speed + "km/s");
+            //$("#icon").attr("src", iconuri + data.weather[0].icon + ".png");
             //console.log(status);
             //console.log(data);
         })
     })
       
-    $("#btnEsconder").click(function () {
-        var api = "cc6bfa527998abd39564fb6dc3059449";
-        var ciudad = $("#ciudades").val();
-        var uri = "http://api.openweathermap.org/data/2.5/weather?id=" + ciudad + "&appid=" + api;
-
-        $.getJSON(uri, function (data, status) {
-            $("#ciudad").text(data.name + ", " + data.sys.country);
-            $("#clima").text(data.weather[0].description);
-            $("#temp").text(data.main.temp + "ºF");
-            $("#tempMa").text(data.main.temp_min + "ºF");
-            $("#tempMi").text(data.main.temp_max + "ºF");
-            $("#viento").text(data.wind.speed + "km/s");
-            //console.log(status);
-            //console.log(data);
-        })            
-    });
-
     $("#searchForm").submit(function (e) {
         e.preventDefault();
         $("#results").empty();

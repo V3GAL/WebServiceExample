@@ -52,6 +52,7 @@ namespace WebServiceExample
                       "~/Content/jquery.fancybox.css",                    //2 Add fancyBox 
                       "~/Content/jquery.fancybox-buttons.css",            //4 Optionally add helpers - button, thumbnail and/or media
                       "~/Content/jquery.fancybox-thumbs.css",             //7 Optionally add helpers - button, thumbnail and/or media
+                      "~/Content/owfont-regular.css",             
                       "~/Content/site.css"));
         }
     }
