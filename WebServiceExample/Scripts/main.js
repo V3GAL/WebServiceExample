@@ -9,22 +9,14 @@
             var t = (data.main.temp - 273.15).toFixed(1);
             var tma = (data.main.temp_min - 273.15).toFixed(2);
             var tmi = (data.main.temp_max - 273.15).toFixed(2);
-            var iconClass = "owf owf-" + data.weather[0].id;
+            var iconClass = "owf owf-" + data.weather[0].id;         
+            console.log(data.weather[0].id);
 
             $("#Wtemp").text(" "+t +"ºC");
-            $("#WIcon").addClass(iconClass);
+            $("#WIcon").removeClass().addClass(iconClass);
             $("#WCity").text(data.name + ", " + data.sys.country);
             $("#WDescription").text(data.weather[0].description);
-            $("#WWindSpeed").text(data.wind.speed + "km/s");
-            console.log(data);
-            //var iconuri = "http://openweathermap.org/img/w/";
-            //$("#ciudad").text(data.name + ", " + data.sys.country);
-            //$("#clima").text(data.weather[0].description);
-            //$("#temp").text(t + "ºC");
-            //$("#tempMa").text(tma + "ºC");
-            //$("#tempMi").text(tmi + "ºC");
-            //$("#viento").text(data.wind.speed + "km/s");
-            //$("#icon").attr("src", iconuri + data.weather[0].icon + ".png");
+            $("#WWindSpeed").text(" "+data.wind.speed + "km/s");
     });
 
     $("#ciudades").change(function () {
@@ -36,23 +28,11 @@
             var tma     = (data.main.temp_min - 273.15).toFixed(2);
             var tmi = (data.main.temp_max - 273.15).toFixed(2);
             var iconClass = "owf owf-" + data.weather[0].id;
-
             $("#Wtemp").text(" " + t + "ºC");
-            $("#WIcon").addClass(iconClass);
+            $("#WIcon").removeClass().addClass(iconClass);
             $("#WCity").text(data.name + ", " + data.sys.country);
             $("#WDescription").text(data.weather[0].description);
-            $("#WWindSpeed").text(data.wind.speed + "km/s");
-            console.log(data);
-            //var iconuri = "http://openweathermap.org/img/w/";
-            //$("#ciudad").text(data.name + ", " + data.sys.country);
-            //$("#clima").text(data.weather[0].description);
-            //$("#temp").text(t + "ºC");
-            //$("#tempMa").text(tma + "ºC");
-            //$("#tempMi").text(tmi+"ºC");
-            //$("#viento").text(data.wind.speed + "km/s");
-            //$("#icon").attr("src", iconuri + data.weather[0].icon + ".png");
-            //console.log(status);
-            //console.log(data);
+            $("#WWindSpeed").text(" " + data.wind.speed + "km/s");
         })
     })
       

@@ -63,7 +63,7 @@ textarea {
 
 /* WEATHER CSS*/
 #weather {
-  width: 530px;
+  width: 550px;
   margin: 10px auto;
   padding-bottom: 20px;
   text-align: center;
@@ -112,10 +112,17 @@ i {
   margin: 0 20px;
 }
 
-#WIcon {
-  vertical-align: middle;
-  text-align: center;
+#WIcon { 
   font-size: 1.5em;
+}
+
+#windIcon, #Wtemp,#WIcon{
+    vertical-align: middle;
+}
+
+#windIcon{
+    color: black;   
+    font-size: 1.3em;
 }
 
 #ciudades{
@@ -133,3 +140,4 @@ i {
     background:none;
     border:none;
 }
+
